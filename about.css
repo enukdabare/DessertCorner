@@ -1,0 +1,396 @@
+:root{
+    --main-color: #00c9a5;
+    --nav-color: #00c9a5;
+    --bg-color: #d3e1dfeb;
+    --black: #2f4858;
+    --card-color: #c0dbea;
+    --border: .1rem solid var(--card-color);
+    --box-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    border: none;
+    outline: none;
+    text-decoration: none;
+    text-transform: capitalize;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    transition: all .3s ease-in;
+    scroll-behavior: smooth;
+    scroll-padding-top: 16vh;
+}
+html{
+    font-size: 62.5%;
+    overflow-x: hidden;
+}
+body{
+    background-color:#e9e9ea;
+}
+section{
+    padding: 2rem 5%;
+}
+.btn{
+    display: inline-block;
+    background-color: var(--main-color);
+    color: #fff;
+    font-size: 1.7rem;
+    padding: 1rem 1rem;
+    margin: 1.2rem 18rem;
+    cursor: pointer;
+    text-align: center;
+    border-radius: 8px;
+}
+.btn:hover{
+    letter-spacing: .2rem;
+}
+.title{
+    text-align: center;
+    color: #fff;
+    text-transform: uppercase;
+    padding: 1rem 0;
+    margin-top: 1rem;
+    font-size: 4rem;
+}
+.title span{
+    color: var(--main-color);
+    text-transform: uppercase;
+}
+.header{
+    background-color: var(--nav-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 7%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 12vh;
+    /*z-index: 1000;*/
+}
+.header .logo img{
+    height: 7rem;
+    border-radius: 0%;
+    width: 100%;
+}
+.header .logo img:hover{
+    color: var(--black);
+    transform: scale(1.1);
+}
+.header .navbar a{
+    color: #fff;
+    font-size: 1.8rem;
+    margin: 0 1rem;
+}
+.header .navbar a:hover{
+    color: var(--black);
+    border-top: 0.3rem solid var(--black);
+    border-bottom: 0.3rem solid var(--black);
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+}
+.header .icons{
+    display: flex;
+
+}
+.header .icons div{
+    color: #fff;
+    cursor: pointer;
+    font-size: 1.8rem;
+    margin-left: 2rem;
+}
+.header .icons div:hover{
+    color: var(--black);
+}
+.header .icons .menu{
+    display: none;
+}
+.header .search-from{
+    display: flex;
+    position: absolute;
+    top: 115%;
+    right: -100%;
+    width: 35rem;
+    height: 3.5rem;
+    background-color: #fff;
+}
+.header .search-from.active{
+    right: 7%;
+}
+.header .search-from input{
+    width: 100%;
+    height: 100%;
+    padding: 1rem;
+    font-size: 1.3rem;
+    color: var(--black);
+    text-transform: none;
+}
+.header .search-from label{
+    color: var(--black);
+    font-size: 1.3rem;
+    padding: 1.3rem;
+    cursor: pointer;
+     
+}
+.header .search-from label:hover{
+    color: var(--main-color);
+}
+
+/* cart items */
+.header .cart-container{
+    position: absolute;
+    top: 100%;
+    right: -100%;
+    width: 28rem;
+    background-color: #fff;
+    height: 88vh;
+    border: 1px solid black;
+    padding: 0.8rem;
+}
+.header .cart-container.active{
+    right: 0;
+}
+.header .cart-container .cart-items{
+    display: flex;
+    align-items: center;
+    margin: 2rem 0;
+    position: relative;
+    gap: 1rem;
+}
+.header .cart-container a{
+    width: 100%;
+}
+.header .cart-container .cart-items img{
+    width: 7rem;
+}
+.header .cart-container .cart-items span{
+    position: absolute;
+    top: 5%;
+    right: 4%;
+    font-size: 2rem;
+    color: var(--black);
+    cursor: pointer;
+}
+.header .cart-container .cart-items span:hover{
+    color: red;
+}
+.header .cart-container .cart-items .content h3{
+    font-size: 1.2rem;
+    color: var(--black);
+    padding-bottom: 0.5rem;
+}
+.header .cart-container .cart-items .content .price{
+    font-size: 1rem;
+    color: var(--main-color);
+}
+
+/* about section */
+.about .head{
+    margin-top: 5rem;
+    align-items: center;
+    padding: 1.5rem 1.5rem;
+}
+.about .container{
+    display: flex;
+    flex-wrap: wrap;
+    border-radius: 8px;
+    margin-top: 1.5rem;
+    gap: 2rem;
+}
+.about .container .img{
+    border-radius: 10px;
+    flex: 1 1 45rem;
+}
+.about .container .img img{
+    width: 90%;
+    border-radius: 10px;
+}
+.about .container .content{
+    flex: 1 1 45rem;
+    padding: 7.5rem 5rem;
+}
+.about .container .content h3{
+    font-size: 3rem;
+    color: #060101;
+    padding: 1.2rem 0;
+    text-align: center;
+}
+.about .container .content p{
+    font-size: 1.5rem;
+    color: #060101;
+    padding: 1rem 0;
+    line-height: 2.5rem;
+    text-align: center;
+}
+
+/*our team section*/
+.team-section .container{
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+	gap: 1.5rem;
+    margin-top: 1rem;
+}
+
+.team-section .container .card{
+	background-color: #639ab8;
+	padding: 3rem 2rem;
+	align-items: center;
+	text-align: center;
+	border-radius: 8px;
+}
+
+.team-section .container .card img{
+	width: 50%;
+	border-radius: 75%;
+}
+
+.team-section .container .card .content{
+	align-items: center;
+	padding: 10px 10px;
+	text-align: center;
+}
+
+.team-section .container .card .content h3{
+	font-size: 25px;
+	padding: 3px 15px;
+	color: #ffffff;
+}
+
+.team-section .container .card .content p{
+	font-size: 12px;
+	line-height: 1.5;
+	margin-top: 5px;
+	padding: 5px 15px;
+	color: #000000;
+	text-align: center;
+    font-weight: 500;
+}
+
+.team-section .container .card .content h4{
+	font-size: 15px;
+	color: #ffffff;
+}
+
+/* footer */
+.footer{
+    background-color: var(--black);
+    text-align: center;
+}
+.footer .social-media{
+    padding: 1rem 0;
+}
+.footer .social-media a{
+    height: 5rem;
+    width: 5rem;
+    border-radius: 50%;
+    line-height: 5rem;
+    font-size: 1.8rem;
+    color: #fff;
+    margin: 0.5rem;
+}
+.footer .social-media a:hover{
+    background-color: var(--main-color);
+}
+.footer .links{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 2rem 0;
+    gap: 1rem;
+}
+.footer .links a{
+    padding: 0.7rem 2rem;
+    color: #fff;
+    font-size: 1.3rem;
+    border-radius: 5px;
+}
+.footer .links a:hover{
+    background-color: var(--main-color);
+}
+.footer .credits{
+    font-size: 1.5rem;
+    color: #fff;
+    font-weight: lighter;
+    padding: 1.5rem;
+}
+.footer .credits span{
+    color: var(--main-color);
+}
+
+/*------Small screen media queries------*/
+@media only screen and (max-width: 789px){
+    html{
+        font-size: 55%;
+    }
+    .header .logo img{
+        height: 6rem;
+    }
+    .header .icons .menu{
+        display: inline-block;
+    }
+    .header .navbar{
+        position: absolute;
+        top: 100%;
+        right: -100%;
+        width: 30rem;
+        background-color: #fff;
+        height: 80vh;
+    }
+    .header .navbar.active{
+        right: 0;
+    }
+    .header .navbar a{
+        color: var(--main-color);
+        display: block;
+        font-size: 2rem;
+        padding: 0.5rem;
+        margin: 1.5rem;
+    }
+
+    
+    .about .container{
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+        gap: .5rem;
+    }
+    .about .container .img{
+        padding-right: 8px;
+    }
+    .about .container .img img{
+        width: 100%;
+        border-radius: 10px;
+    }
+    .about .container .content{
+        padding: 0 1rem;
+        margin: .1rem 1rem;
+    }
+    .about .container .content h3{
+        font-size: 2rem;
+        color: #060101;
+        padding: 1.2rem 0;
+        text-align: center;
+    }
+    .about .container .content p{
+        font-size: 1.5rem;
+        color: #060101;
+        padding: 1rem 0;
+        line-height: 2.5rem;
+        text-align: center;
+    }
+
+    .team-section .container{
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+        gap: 1rem;
+    }
+    .team-section .container .card{
+        background-color: #639ab8;
+        padding: 3rem 2rem;
+        align-items: center;
+        text-align: center;
+        border-radius: 8px;
+        margin-top: 1rem;
+    }
+    
+}
